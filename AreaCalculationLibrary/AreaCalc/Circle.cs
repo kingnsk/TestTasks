@@ -14,7 +14,7 @@ namespace AreaCalc
         { 
             if (radius <= 0.0) 
             {
-                throw new ArgumentException("Радиус должен быть больше 0");
+                throw new ArgumentOutOfRangeException("Радиус должен быть больше 0");
             }
             Radius = radius;
         }
