@@ -1,0 +1,38 @@
+﻿<head>
+	<link rel="stylesheet" href="~/css/styles.css" />
+</head>
+
+	<h1>Выберите категорию:</h1>
+
+
+<ul>
+	
+	@foreach (var category in Model)
+	{
+		<li>
+			@category.Name
+			<div class="button-container">
+			<button class="button" onclick="getProductsByCategory(@category.CategoryId)">Показать продукты</button>
+			</div>
+		</li>
+	}
+	
+</ul>
+
+
+<div id="productsContainer"></div>
+
+@section scripts {
+	<script>
+		function getProductsByCategory(categoryId){
+			$.ajax({
+				url:"/Product/GetProductsByCategory?categoryId="+categoryId,
+				method: "GET",
+				success: function (data) {
+					$("#productsContainer").html(data);
+				}
+			});
+		}
+	</script>
+}
+	

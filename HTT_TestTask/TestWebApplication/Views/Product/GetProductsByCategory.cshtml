@@ -1,0 +1,23 @@
+@model List<Product>
+
+<h2>Список товаров в выбранной категории:</h2>
+
+<div class="text-center">
+<table>
+	<thead>
+		<tr>
+			<th style="padding-right: 10px;">Товар</th>
+			<th style="padding-left: 10px;">Цена</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var product in Model)
+		{
+			<tr>
+				<td style="padding-right: 10px;">@product.Name</td>
+				<td style="padding-left: 10px;">@product.Price</td>
+			</tr>
+		}
+	</tbody>
+</table>
+</div>

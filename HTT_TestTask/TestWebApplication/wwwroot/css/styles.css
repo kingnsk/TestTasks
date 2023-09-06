@@ -1,0 +1,14 @@
+.button-container {
+	display: flex;
+	justify-contenet: center;
+	font-size: 14px;
+}
+
+button {
+	color:	red;
+}
+
+ul {
+	font-size: 26px;
+	color: blue;
+}
